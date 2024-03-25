@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 export USERNAME=`whoami`
 
-sudo apt-get update
+# sudo apt-get update
 sudo apt-get -y install --no-install-recommends apt-utils dialog 2>&1
 sudo apt-get install -y \
   apt-transport-https \
@@ -13,12 +13,15 @@ sudo apt-get install -y \
   lsb-release \
   unzip 
   
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-sudo apt install -y fish
+# sudo apt-add-repository ppa:fish-shell/release-3
+# sudo apt update
+# sudo apt install -y fish
 
-sudo apt-get autoremove -y
-sudo rm -rf /var/lib/apt/lists/*
+wget https://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/amd64/fish_3.7.1-1_amd64.deb -O fish.deb
+sudo dpkg -i fish.deb
+
+# sudo apt-get autoremove -y
+# sudo rm -rf /var/lib/apt/lists/*
 
 # Define the path to the config.fish file
 config_file="$HOME/.config/fish/config.fish"
@@ -62,8 +65,8 @@ fish -c "fisher install Ladicle/fish-kubectl-prompt"
 
 # install brew packages
 # Running brew packages in the last as script is not proceeding post that
-fish -c "brew install fzf"
-fish -c "brew install exa"
+# fish -c "brew install fzf"
+# fish -c "brew install exa"
 fish -c "brew install lf"
 fish -c "brew install kubectx"
 fish -c "brew install yq"
