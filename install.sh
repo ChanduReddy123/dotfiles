@@ -2,7 +2,7 @@
 
 export DEBIAN_FRONTEND=noninteractive
 export USERNAME=`whoami`
-
+echo "###############################################1"
 # sudo apt-get update
 sudo apt-get -y install --no-install-recommends apt-utils dialog 2>&1
 sudo apt-get install -y \
@@ -12,7 +12,7 @@ sudo apt-get install -y \
   git \
   lsb-release \
   unzip 
-  
+echo "###############################################2"
 # sudo apt-add-repository ppa:fish-shell/release-3
 # sudo apt update
 # sudo apt install -y fish
@@ -26,7 +26,7 @@ sudo dpkg -i fish.deb
 # Define the path to the config.fish file
 config_file="$HOME/.config/fish/config.fish"
 abbr_file="$HOME/.config/fish/conf.d/abbr.fish"
-
+echo "###############################################3"
 # Create the directory if it doesn't exist
 mkdir -p "$(dirname "$config_file")"
 mkdir -p "$(dirname "$abbr_file")"
