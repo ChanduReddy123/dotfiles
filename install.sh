@@ -63,6 +63,9 @@ fish -c "fisher install Ladicle/fish-kubectl-prompt"
 # install homebrew
 /bin/bash -c "(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | /bin/bash
 
+# install kube ns
+curl -sS https://webi.sh/kubens | sh 
+
 # install brew packages
 # Running brew packages in the last as script is not proceeding post that
 # fish -c "brew install fzf"
@@ -74,4 +77,4 @@ fish -c "brew install jid"
 fish -c "brew install istioctl"
 fish -c "kubectl completion fish | ."
 fish -c "brew install gcc"
-fish -c "brew install kubens"
+# fish -c "brew install kubens"
